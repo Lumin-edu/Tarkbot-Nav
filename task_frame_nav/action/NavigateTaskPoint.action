@@ -1,0 +1,18 @@
+# Destination in the fixed Task frame. Coordinates are metres; the plane is FLU (x forward, y left).
+float64 x
+float64 y
+---
+# error_code: 0 success, 1 Nav2 aborted, 2 canceled, 3 Nav2 unavailable, 4 internal failure.
+bool success
+int32 error_code
+string message
+geometry_msgs/PoseStamped target_pose
+---
+# status uses action_msgs/GoalStatus values for the active NavigateToPose goal.
+uint8 status
+string status_text
+geometry_msgs/PoseStamped current_pose
+float32 distance_remaining
+builtin_interfaces/Duration navigation_time
+builtin_interfaces/Duration estimated_time_remaining
+uint16 number_of_recoveries
