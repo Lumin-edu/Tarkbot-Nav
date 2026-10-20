@@ -214,7 +214,7 @@ def test_combined_launch_starts_rviz_by_default_and_allows_disabling_it():
     }
     assert _launch_default(arguments['use_rviz']) == 'true'
     assert _launch_default(arguments['rviz_config']).endswith(
-        'task_frame_nav/config/task_frame_nav.rviz')
+        'config/task_frame_nav.rviz')
 
     rviz_nodes = [
         entity for entity in description.entities

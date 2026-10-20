@@ -48,7 +48,6 @@ def generate_launch_description():
             'rviz_config',
             default_value=os.path.join(
                 action_share,
-                'task_frame_nav',
                 'config',
                 'task_frame_nav.rviz'),
             description='Path to the RViz configuration file'),
@@ -56,7 +55,6 @@ def generate_launch_description():
             'nav2_params',
             default_value=os.path.join(
                 action_share,
-                'task_frame_nav',
                 'config',
                 'nav2_task_frame.yaml')),
         DeclareLaunchArgument(
