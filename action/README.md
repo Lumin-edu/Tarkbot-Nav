@@ -1,18 +1,16 @@
 # NavigateTaskPoint
 
-`airobot_action/action/NavigateTaskPoint` accepts a planar goal in the captured
-`task_frame` and forwards it to Nav2's `NavigateToPose` action.
+`airobot_action/action/NavigateTaskPoint` sends an `(x, y)` goal in the captured
+`task_frame` to Nav2. Coordinates are metres; `+x` is forward and `+y` is left.
 
-| Section | Fields | Meaning |
-| --- | --- | --- |
-| Goal | `x`, `y` (`float64`) | Position in metres; `+x` is forward and `+y` is left. |
-| Result | `success`, `error_code`, `message`, `target_pose` | Completion status and resolved Nav2 target. |
-| Feedback | `status`, `status_text`, `current_pose`, `distance_remaining`, `navigation_time`, `estimated_time_remaining`, `number_of_recoveries` | Current Nav2 progress. |
+- Goal: `x`, `y` (`float64`).
+- Result: `success`, `error_code`, `message`, `target_pose`.
+- Feedback: Nav2 status, current pose, distance and timing estimates, recoveries.
+- Result codes: `0` success, `1` aborted, `2` canceled, `3` Nav2 unavailable
+  or rejects the goal, `4` internal error.
 
-Result codes are `0` success, `1` Nav2 aborted, `2` canceled, `3` Nav2
-unavailable or rejected the goal, and `4` internal error. The server accepts one
-active goal and rejects requests until the task frame is captured and Nav2 is
-ready. Cancellation is forwarded to Nav2.
+Only one goal runs at a time. Goals are rejected until the task frame is captured
+and Nav2 is ready; cancellation is forwarded to Nav2.
 
 ```bash
 ros2 action send_goal /task_frame_nav \
