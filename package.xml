@@ -27,6 +27,7 @@
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>livox_ros_driver2</exec_depend>
   <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_common</exec_depend>
   <exec_depend>rosidl_default_runtime</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>tarkbot_robot</exec_depend>
@@ -36,6 +37,7 @@
   <test_depend>launch_testing</test_depend>
   <test_depend>launch_testing_ament_cmake</test_depend>
   <test_depend>launch_testing_ros</test_depend>
+  <test_depend>lifecycle_msgs</test_depend>
   <test_depend>rclpy</test_depend>
   <test_depend>tf2_msgs</test_depend>
   <test_depend>python3-yaml</test_depend>
